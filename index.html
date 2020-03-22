@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Bulk SMS API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -196,25 +196,28 @@
   color: #f92672;
 }
     </style>
-    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all.js"></script>
+    <link href="stylesheets/screen-a1ce949a.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-bccf8c07.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-c5541673.js"></script>
   </head>
 
-  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;]">
+  <body class="index" data-languages="[&quot;shell&quot;,&quot;ruby&quot;,&quot;python&quot;,&quot;javascript&quot;,&quot;go&quot;,&quot;java&quot;,&quot;php&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="images/navbar.png" alt="Navbar" />
+        <img src="images/navbar-cad8cdcb.png" alt="Navbar" />
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo.png" class="logo" alt="Logo" />
+      <img src="images/logo-1e815a84.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
               <a href="#" data-language-name="ruby">ruby</a>
               <a href="#" data-language-name="python">python</a>
               <a href="#" data-language-name="javascript">javascript</a>
+              <a href="#" data-language-name="go">go</a>
+              <a href="#" data-language-name="java">java</a>
+              <a href="#" data-language-name="php">php</a>
         </div>
         <div class="search">
           <input type="text" class="search" id="input-search" placeholder="Search">
@@ -222,19 +225,27 @@
         <ul class="search-results"></ul>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
-          </li>
-          <li>
-            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
-          </li>
-          <li>
-            <a href="#kittens" class="toc-h1 toc-link" data-title="Kittens">Kittens</a>
+            <a href="#generate-token" class="toc-h1 toc-link" data-title="Generate Token">Generate Token</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-kittens" class="toc-h2 toc-link" data-title="Get All Kittens">Get All Kittens</a>
+                    <a href="#step-1" class="toc-h2 toc-link" data-title="Step 1">Step 1</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-kitten" class="toc-h2 toc-link" data-title="Get a Specific Kitten">Get a Specific Kitten</a>
+                    <a href="#step-2" class="toc-h2 toc-link" data-title="Step 2">Step 2</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#authentication-headers" class="toc-h1 toc-link" data-title="Authentication headers">Authentication headers</a>
+          </li>
+          <li>
+            <a href="#sms-apis" class="toc-h1 toc-link" data-title="SMS APIs">SMS APIs</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#send-sms" class="toc-h2 toc-link" data-title="Send SMS">Send SMS</a>
+                  </li>
+                  <li>
+                    <a href="#send-bulk-sms" class="toc-h2 toc-link" data-title="Send Bulk SMS">Send Bulk SMS</a>
                   </li>
                   <li>
                     <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
@@ -247,110 +258,311 @@
       </ul>
         <ul class="toc-footer">
             <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/lord/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id='introduction'>Introduction</h1>
-<p>Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.</p>
+        <h1 id='generate-token'>Generate Token</h1>
+<p>Before you begin API integrations you will have to generate authorization token. Below steps are outlined on how to generate authorization token.  Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+You need to create an account at <a href="https://ujumbetech.co.ke">ujumbeTech</a>. Once you have the account, login to your account </p>
+<h3 id='step-1'>Step 1</h3>
+<p>Once logged in go to the bottom left red sidebar, look for cog wheel icon (show in the below image) and click it</p>
 
-<p>We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<p><img src="images/generate-token-step-1-eea72d7c.png" alt="Generate token step 1" /></p>
+<h3 id='step-2'>Step 2</h3>
+<p>Setting popup will show once you click the cog wheel icon. Click the API section then click generate API Token button. Shown in the below image. Once the API is generated it will be displayed in the same popup window. Copy the API Token and store it securely.</p>
 
-<p>This example API documentation page was created with <a href="https://github.com/lord/slate">Slate</a>. Feel free to edit it and use it as a base for your own API&#39;s documentation.</p>
-<h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<p><img src="images/generate-token-step-2-a38f6893.png" alt="Generate token step 2" /></p>
+<h1 id='authentication-headers'>Authentication headers</h1>
+<p>UjumbeTech SMS Portal uses API key to allow access to the API. You can register a new API key by logging in to your account and follow the above steps.
+UjumbeTech SMS Portal expects API key to be included in all API requests to the server in a header that looks like the following:</p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<p><code>Authorization: secureapikeys</code></p>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>Make sure to replace <code>meowmeowmeow</code> with your API key.</p>
-</blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code>Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+<aside class="warning">
+You must replace <code>secureapikeys</code> with your personal API key.
 </aside>
-<h1 id='kittens'>Kittens</h1><h2 id='get-all-kittens'>Get All Kittens</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h1 id='sms-apis'>SMS APIs</h1><h2 id='send-sms'>Send SMS</h2>
+<blockquote>
+<p>Send sms endpoint expects JSON in the below format:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message here"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"msisdn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2547xxxxxxxx"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sender_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UjumbeTech"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'net/http'</span>
+<span class="nb">require</span> <span class="s1">'uri'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
+<span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="s2">"https://vas.ujumbetech.co.ke/api/message/send/sms"</span><span class="p">)</span>
 
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">get</span><span class="p">()</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens"</span>
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
+<span class="n">header</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'text/json'</span><span class="p">,</span><span class="s1">'Authorization'</span><span class="ss">:'secureapikeys'</span><span class="p">}</span>
+<span class="n">user</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="ss">message: </span><span class="s1">'message here'</span><span class="p">,</span>
+            <span class="ss">msisdn: </span><span class="s1">'2547xxxxxxxx'</span><span class="p">,</span>
+            <span class="ss">sender_id: </span><span class="s1">'UjumbeTech'</span>
+       <span class="p">}</span>
 
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">kittens</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="nx">get</span><span class="p">();</span>
+<span class="c1"># Create the HTTP objects</span>
+<span class="n">http</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">host</span><span class="p">,</span> <span class="n">uri</span><span class="p">.</span><span class="nf">port</span><span class="p">)</span>
+<span class="n">request</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="o">::</span><span class="no">Post</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">uri</span><span class="p">.</span><span class="nf">request_uri</span><span class="p">,</span> <span class="n">header</span><span class="p">)</span>
+<span class="n">request</span><span class="p">.</span><span class="nf">body</span> <span class="o">=</span> <span class="n">user</span><span class="p">.</span><span class="nf">to_json</span>
+
+<span class="c1"># Send the request</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">http</span><span class="p">.</span><span class="nf">request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+</code></pre><pre class="highlight python tab-python"><code>
+<span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">newHeaders</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Content-type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span> <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'secureapikeys'</span><span class="p">}</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">'message'</span><span class="p">:</span> <span class="s">'message here'</span><span class="p">,</span><span class="s">'msisdn'</span><span class="p">:</span><span class="s">'2547xxxxxxxx'</span><span class="p">,</span><span class="s">'sender_id'</span><span class="p">:</span><span class="s">'UjumbeTech'</span><span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://vas.ujumbetech.co.ke/api/message/send/sms'</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">newHeaders</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">"Status code: "</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+
+<span class="n">response_Json</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Printing Post JSON data"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">response_Json</span><span class="p">[</span><span class="s">'status'</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">response_Json</span><span class="p">[</span><span class="s">'message'</span><span class="p">])</span>
+
+</code></pre><pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s1">'https://vas.ujumbetech.co.ke/api/message/send/sms'</span> <span class="se">\</span>
+--header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+--header <span class="s1">'Authorization: secureapikeys'</span> <span class="se">\</span>
+--data-raw <span class="s1">'{
+    "message": "You message",
+    "msisdn": "2547xxxxxxxx",
+    "sender_id": "UjumbeTech"
+}'</span>
+</code></pre><pre class="highlight javascript tab-javascript"><code>
+            <span class="c1">// Creating a XHR object </span>
+            <span class="kd">let</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span> 
+            <span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">"https://vas.ujumbetech.co.ke/api/message/send/sms"</span><span class="p">;</span> 
+
+            <span class="c1">// open a connection </span>
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"POST"</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span> 
+
+            <span class="c1">// Set the request header i.e. which type of content you are sending </span>
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"Content-Type"</span><span class="p">,</span><span class="s2">"application/json"</span><span class="p">);</span> 
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"Authorization"</span><span class="p">,</span><span class="s2">"secureapikeys"</span><span class="p">);</span> 
+
+            <span class="c1">// Create a state change callback </span>
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> 
+                <span class="k">if</span> <span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span> <span class="p">)</span> <span class="p">{</span> 
+
+                    <span class="c1">// Print received data from server </span>
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">.</span><span class="nx">status</span><span class="p">);</span> 
+                    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">responseText</span><span class="p">.</span><span class="nx">message</span><span class="p">);</span> 
+                <span class="p">}</span> 
+            <span class="p">};</span> 
+
+            <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">"message"</span><span class="p">:</span> <span class="s2">"message here"</span><span class="p">,</span>
+                <span class="s2">"msisdn"</span><span class="p">:</span> <span class="s2">"2547xxxxxxxx"</span><span class="p">,</span>
+                <span class="s2">"sender_id"</span><span class="p">:</span> <span class="s2">"UjumbeTech"</span>
+            <span class="p">}</span>
+
+            <span class="c1">// Converting JSON data to string </span>
+            <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span> 
+
+            <span class="c1">// Sending data with the request </span>
+            <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span> 
+</code></pre><pre class="highlight go tab-go"><code><span class="k">package</span><span class="x"> </span><span class="n">main</span><span class="x">
+
+</span><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
+  </span><span class="s">"bytes"</span><span class="x">
+  </span><span class="s">"fmt"</span><span class="x">
+  </span><span class="s">"net/http"</span><span class="x">
+  </span><span class="s">"io/ioutil"</span><span class="x">
+  </span><span class="s">"encoding/json"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+
+</span><span class="k">func</span><span class="x"> </span><span class="n">main</span><span class="p">()</span><span class="x"> </span><span class="p">{</span><span class="x">
+
+  </span><span class="n">url</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="s">"http://vas.ujumbetech.co.ke/api/message/send/sms"</span><span class="x">
+  </span><span class="n">method</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="s">"POST"</span><span class="x">
+
+</span><span class="c">// construct your message using interface</span><span class="x">
+ </span><span class="n">message</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="x"> </span><span class="k">interface</span><span class="p">{}{</span><span class="x">
+    </span><span class="s">"message"</span><span class="o">:</span><span class="x"> </span><span class="s">"You message"</span><span class="p">,</span><span class="x">
+    </span><span class="s">"msisdn"</span><span class="o">:</span><span class="s">"2547xxxxxxxx"</span><span class="p">,</span><span class="x">
+    </span><span class="s">"sender_id"</span><span class="o">:</span><span class="s">"UjumbeTech"</span><span class="p">,</span><span class="x">
+ </span><span class="p">}</span><span class="x">
+
+ </span><span class="c">// convert to json</span><span class="x">
+  </span><span class="n">payload</span><span class="p">,</span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">json</span><span class="o">.</span><span class="n">Marshal</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="x">
+  </span><span class="k">if</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">!=</span><span class="x"> </span><span class="no">nil</span><span class="x"> </span><span class="p">{</span><span class="x">
+
+    </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="x">
+  </span><span class="p">}</span><span class="x">
+
+</span><span class="c">// make http request</span><span class="x">
+  </span><span class="n">client</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="o">&amp;</span><span class="n">http</span><span class="o">.</span><span class="n">Client</span><span class="x"> </span><span class="p">{}</span><span class="x">
+  </span><span class="n">req</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">http</span><span class="o">.</span><span class="n">NewRequest</span><span class="p">(</span><span class="n">method</span><span class="p">,</span><span class="x"> </span><span class="n">url</span><span class="p">,</span><span class="x"> </span><span class="n">bytes</span><span class="o">.</span><span class="n">NewBuffer</span><span class="p">(</span><span class="n">payload</span><span class="p">))</span><span class="x">
+
+  </span><span class="k">if</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">!=</span><span class="x"> </span><span class="no">nil</span><span class="x"> </span><span class="p">{</span><span class="x">
+
+    </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="x">
+  </span><span class="p">}</span><span class="x">
+
+  </span><span class="n">req</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"Content-Type"</span><span class="p">,</span><span class="x"> </span><span class="s">"application/json"</span><span class="p">)</span><span class="x">
+  </span><span class="n">req</span><span class="o">.</span><span class="n">Header</span><span class="o">.</span><span class="n">Add</span><span class="p">(</span><span class="s">"Authorization"</span><span class="p">,</span><span class="x"> </span><span class="s">"secureapikeys"</span><span class="p">)</span><span class="x">
+
+  </span><span class="n">res</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">client</span><span class="o">.</span><span class="n">Do</span><span class="p">(</span><span class="n">req</span><span class="p">)</span><span class="x">
+  </span><span class="k">if</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">!=</span><span class="x"> </span><span class="no">nil</span><span class="x"> </span><span class="p">{</span><span class="x">
+
+    </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="x">
+  </span><span class="p">}</span><span class="x"> 
+
+  </span><span class="k">defer</span><span class="x"> </span><span class="n">res</span><span class="o">.</span><span class="n">Body</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span><span class="x">
+  </span><span class="n">body</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">ioutil</span><span class="o">.</span><span class="n">ReadAll</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">Body</span><span class="p">)</span><span class="x">
+
+  </span><span class="n">fmt</span><span class="o">.</span><span class="n">Println</span><span class="p">(</span><span class="kt">string</span><span class="p">(</span><span class="n">body</span><span class="p">))</span><span class="x">
+</span><span class="p">}</span><span class="x">
+</span></code></pre><pre class="highlight java tab-java"><code><span class="kn">import</span> <span class="nn">java.io.BufferedReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStreamReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.OutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.HttpURLConnection</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.URL</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.google.gson.Gson</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PostJSONWithHttpURLConnection</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="o">(</span><span class="n">String</span> <span class="o">[]</span><span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span><span class="o">{</span>
+
+        <span class="n">URL</span> <span class="n">url</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span> <span class="o">(</span><span class="s">"https://vas.ujumbetech.co.ke/api/message/send/sms"</span><span class="o">);</span>
+
+        <span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span><span class="n">url</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
+        <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"POST"</span><span class="o">);</span>
+
+        <span class="n">con</span><span class="o">.</span><span class="na">setRequestProperty</span><span class="o">(</span><span class="s">"Content-Type"</span><span class="o">,</span> <span class="s">"application/json; utf-8"</span><span class="o">);</span>
+        <span class="n">con</span><span class="o">.</span><span class="na">setRequestProperty</span><span class="o">(</span><span class="s">"Accept"</span><span class="o">,</span> <span class="s">"application/json"</span><span class="o">);</span>
+        <span class="n">con</span><span class="o">.</span><span class="na">setRequestProperty</span><span class="o">(</span><span class="s">"Authorization"</span><span class="o">,</span> <span class="s">"secureapikeys"</span><span class="o">);</span>
+
+        <span class="n">con</span><span class="o">.</span><span class="na">setDoOutput</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+
+        <span class="c1">//JSON String need to be constructed for the specific resource. </span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedHashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"message"</span><span class="o">,</span><span class="s">"You message"</span><span class="o">);</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"msisdn"</span><span class="o">,</span><span class="s">"2547xxxxxxxx"</span><span class="o">);</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"sender_id"</span><span class="o">,</span><span class="s">"UjumbeTech"</span><span class="o">);</span>
+        <span class="n">Gson</span> <span class="n">gson</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Gson</span><span class="o">();</span>
+        <span class="n">String</span> <span class="n">jsonInputString</span> <span class="o">=</span> <span class="n">gson</span><span class="o">.</span><span class="na">toJson</span><span class="o">(</span><span class="n">map</span><span class="o">);</span>
+
+        <span class="k">try</span><span class="o">(</span><span class="n">OutputStream</span> <span class="n">os</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getOutputStream</span><span class="o">()){</span>
+
+            <span class="kt">byte</span><span class="o">[]</span> <span class="n">input</span> <span class="o">=</span> <span class="n">jsonInputString</span><span class="o">.</span><span class="na">getBytes</span><span class="o">(</span><span class="s">"utf-8"</span><span class="o">);</span>
+            <span class="n">os</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">input</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">input</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>           
+        <span class="o">}</span>
+
+        <span class="kt">int</span> <span class="n">code</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">getResponseCode</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">code</span><span class="o">);</span>
+
+        <span class="k">try</span><span class="o">(</span><span class="n">BufferedReader</span> <span class="n">br</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span><span class="n">con</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">(),</span> <span class="s">"utf-8"</span><span class="o">))){</span>
+            <span class="n">StringBuilder</span> <span class="n">response</span> <span class="o">=</span> <span class="k">new</span> <span class="n">StringBuilder</span><span class="o">();</span>
+            <span class="n">String</span> <span class="n">responseLine</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="k">while</span> <span class="o">((</span><span class="n">responseLine</span> <span class="o">=</span> <span class="n">br</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">response</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">responseLine</span><span class="o">.</span><span class="na">trim</span><span class="o">());</span>
+            <span class="o">}</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre><pre class="highlight php tab-php"><code>
+<span class="cp">&lt;?php</span>
+    <span class="nv">$message</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">"message"</span> <span class="o">=&gt;</span> <span class="s1">'You message'</span><span class="p">,</span>
+        <span class="s2">"msisdn"</span> <span class="o">=&gt;</span> <span class="s2">"2547xxxxxxxx"</span><span class="p">,</span>
+        <span class="s2">"sender_id"</span> <span class="o">=&gt;</span> <span class="s2">"UjumbeTech"</span>        
+    <span class="p">];</span>
+
+    <span class="nv">$data_string</span> <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$message</span><span class="p">);</span>
+
+    <span class="nv">$httpRequest</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://vas.ujumbetech.co.ke/api/message/send/sms"</span><span class="p">);</span>
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$httpRequest</span><span class="p">,</span><span class="nx">CURLOPT_POST</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$httpRequest</span><span class="p">,</span><span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span><span class="nv">$data_string</span><span class="p">);</span>
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$httpRequest</span><span class="p">,</span><span class="nx">CURLOPT_TIMEOUT</span><span class="p">,</span><span class="mi">60</span><span class="p">);</span>
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$httpRequest</span><span class="p">,</span><span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$httpRequest</span><span class="p">,</span><span class="nx">CURLOPT_HTTPHEADER</span><span class="p">,</span><span class="k">array</span><span class="p">(</span>
+        <span class="s2">"Content-Type:application/json"</span><span class="p">,</span>
+        <span class="s2">"Authorization: 'secureapikeys'"</span>
+        <span class="p">)</span>
+    <span class="p">);</span>
+    <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$httpRequest</span><span class="p">,</span><span class="nx">CURLOPT_RETURNTRANSFER</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
+    <span class="c1">//curl_setopt($httpRequest,CURLOPT_HEADER,1);
+</span>
+    <span class="nv">$response</span>    <span class="o">=</span> <span class="nb">curl_exec</span><span class="p">(</span><span class="nv">$httpRequest</span><span class="p">);</span>
+    <span class="nv">$status</span>      <span class="o">=</span> <span class="nb">curl_getinfo</span><span class="p">(</span><span class="nv">$httpRequest</span><span class="p">,</span><span class="nx">CURLINFO_HTTP_CODE</span><span class="p">);</span>
+    <span class="nb">curl_close</span><span class="p">(</span><span class="nv">$httpRequest</span><span class="p">);</span>
+    <span class="k">echo</span> <span class="nv">$status</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="nv">$response</span><span class="p">;</span>
+
 </code></pre>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>The above command returns JSON structured like this on success:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fluffums"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"calico"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SMS successfully queued for sending. Total recipients 1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"transaction_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2295</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>On failure the following is returned, refere to status codes for error types</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">428</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"error message"</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all kittens.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET http://example.com/api/kittens</code></p>
-<h3 id='query-parameters'>Query Parameters</h3>
+<p><code>POST https://vas.ujumbetech.co.ke/api/message/send/sms</code></p>
+<h3 id='query-input-parameters'>Query Input Parameters</h3>
+<p>The API expects a JSON payload with the following</p>
+
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>Key</th>
+<th>Required</th>
 <th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>include_cats</td>
-<td>false</td>
-<td>If set to true, the result will also include cats.</td>
+<td>message</td>
+<td>yes</td>
+<td>none</td>
+<td>message ro send</td>
 </tr>
 <tr>
-<td>available</td>
+<td>msisdn</td>
+<td>yes</td>
 <td>true</td>
-<td>If set to false, the result will include kittens that have already been adopted.</td>
+<td>Recipient phone number. Separate multiple numbers with comma ( , )</td>
+</tr>
+<tr>
+<td>country_code</td>
+<td>no</td>
+<td>ke</td>
+<td>if this is not a kenya number, supply the country code</td>
+</tr>
+<tr>
+<td>sender_id</td>
+<td>no</td>
+<td>UjumbeTech</td>
+<td>your registered sender ID</td>
 </tr>
 </tbody></table>
 
 <aside class="success">
 Remember — a happy kitten is an authenticated kitten!
 </aside>
-<h2 id='get-a-specific-kitten'>Get a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
+<h2 id='send-bulk-sms'>Send Bulk SMS</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
 <span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -376,21 +588,135 @@ Remember — a happy kitten is an authenticated kitten!
   </span><span class="s2">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This endpoint retrieves a specific kitten.</p>
+<p>This endpoint provides an interface to upload contacts in a file. </p>
+<h3 id='file-format'>file format</h3>
+<p>You can only upload a CSV file
+The first row will in the file will be treated as headers. </p>
+<h4 id='basic-format'>basic format</h4>
+<p>The first column is expected to be the phone numbers example below</p>
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-<h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
-<th>Parameter</th>
+<th>msisdn</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>2547xxxxxxx0</td>
+</tr>
+<tr>
+<td>2547xxxxxxx1</td>
+</tr>
+<tr>
+<td>2547xxxxxxx2</td>
+</tr>
+<tr>
+<td>2547xxxxxxx3</td>
+</tr>
+<tr>
+<td>2547xxxxxxx4</td>
+</tr>
+</tbody></table>
+<h4 id='custom-messages'>custom messages</h4>
+<p>File upload API allows you to send custom sms e.g when sending school fees balance where you want to customize sms for every contact to pick the required fee balance. </p>
+
+<ol>
+<li>step 1<br>
+create file with allow values to be replace. 
+When creating a file in this category, the 1st column remains to be phone number, the subsequent columns will be the replacement parameters. example you want to send sms to parents your want sms to go out with student name, fee balance and adminission number. Your file will have the below format</li>
+</ol>
+
+<table><thead>
+<tr>
+<th>msisdn</th>
+<th>name</th>
+<th>admission</th>
+<th>balance</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>2547xxxxxxx0</td>
+<td>John Doe</td>
+<td>adm/01</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>2547xxxxxxx1</td>
+<td>Alice Bobby</td>
+<td>adm/02</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>2547xxxxxxx2</td>
+<td>Ruby Rose</td>
+<td>adm/03</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>2547xxxxxxx3</td>
+<td>George Nim</td>
+<td>adm/04</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>2547xxxxxxx4</td>
+<td>Lucas Madona</td>
+<td>adm/05</td>
+<td>1000</td>
+</tr>
+</tbody></table>
+
+<p>You can have as many columns and rows the only limit will be file size, your file should be below 100MB</p>
+
+<ol>
+<li>step 2
+Compose your sms to include column header name wrapped in square brackets <code>[ and ]</code> example to use <em>name</em> in SMS we use <code>[name]</code> back to our example above our sms will look like the following</li>
+</ol>
+
+<p><code>Dear parent your student [name] has a fee balance of [balance]. Please pay your fees through paybill 89544 account [admission] thank you</code> </p>
+
+<p>The above will be your sms contents, the system will go through the file row by row replacing SMS parameters with values in the file in that column. Each recipient will receive a customized SMS</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>POST https://vas.ujumbetech.co.ke/api/message/send/bulk</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
+<p>This endpoint accepts form data with the below fields</p>
+
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Required</th>
+<th>Default</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
-<td>ID</td>
-<td>The ID of the kitten to retrieve</td>
+<td>message</td>
+<td>yes</td>
+<td>none</td>
+<td>message ro send</td>
+</tr>
+<tr>
+<td>country_code</td>
+<td>no</td>
+<td>ke</td>
+<td>if this are not a kenya phone numbers, supply the country code</td>
+</tr>
+<tr>
+<td>sender_id</td>
+<td>no</td>
+<td>UjumbeTech</td>
+<td>your registered sender ID</td>
+</tr>
+<tr>
+<td>file</td>
+<td>yes</td>
+<td>File to be uploaded</td>
+<td></td>
+</tr>
+<tr>
+<td>campaign_name</td>
+<td>yes</td>
+<td>Name of Campign, contact group</td>
+<td></td>
 </tr>
 </tbody></table>
 <h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
@@ -498,6 +824,9 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
                 <a href="#" data-language-name="ruby">ruby</a>
                 <a href="#" data-language-name="python">python</a>
                 <a href="#" data-language-name="javascript">javascript</a>
+                <a href="#" data-language-name="go">go</a>
+                <a href="#" data-language-name="java">java</a>
+                <a href="#" data-language-name="php">php</a>
           </div>
       </div>
     </div>
