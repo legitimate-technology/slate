@@ -1,5 +1,5 @@
 ---
-title: Bulk SMS API Reference
+title: SMS Savvy API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
@@ -12,7 +12,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
+  - <a href='https://sms-savvy.co.ke'>Documentation SMS Savvy</a>
 
 includes:
   - errors
@@ -22,8 +22,8 @@ search: true
 
 # Generate Token
 
-Before you begin API integrations you will have to generate authorization token. Below steps are outlined on how to generate authorization token.  Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-You need to create an account at [ujumbeTech](https://ujumbetech.co.ke). Once you have the account, login to your account 
+Before you begin API integrations you will have to generate authorization token. Below steps are outlined on how to generate authorization token.
+You need to create an account at [SMS Savvy](https://sms-savvy.co.ke). Once you have the account, login to your account 
 
 ### Step 1
 Once logged in go to the bottom left red sidebar, look for cog wheel icon (show in the below image) and click it
@@ -39,8 +39,8 @@ Setting popup will show once you click the cog wheel icon. Click the API section
 
 # Authentication headers
 
-UjumbeTech SMS Portal uses API key to allow access to the API. You can register a new API key by logging in to your account and follow the above steps.
-UjumbeTech SMS Portal expects API key to be included in all API requests to the server in a header that looks like the following:
+SMS Savvy SMS Portal uses API key to allow access to the API. You can register a new API key by logging in to your account and follow the above steps.
+SMS Savvy SMS Portal expects API key to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: secureapikeys`
 
@@ -57,7 +57,7 @@ You must replace <code>secureapikeys</code> with your personal API key.
 {
     "message": "message here",
     "msisdn": "2547xxxxxxxx",
-    "sender_id": "UjumbeTech"
+    "sender_id": "SMS Savvy"
 }
 ```
 
@@ -66,13 +66,13 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-uri = URI.parse("https://vas.ujumbetech.co.ke/api/message/send/sms")
+uri = URI.parse("https://vas.sms-savvy.co.ke/api/message/send/sms")
 
 header = {'Content-Type': 'text/json','Authorization':'secureapikeys'}
 user = {
             message: 'message here',
             msisdn: '2547xxxxxxxx',
-            sender_id: 'UjumbeTech'
+            sender_id: 'SMS Savvy'
        }
 
 # Create the HTTP objects
@@ -89,9 +89,9 @@ response = http.request(request)
 import requests
 
 newHeaders = {'Content-type': 'application/json', 'Authorization': 'secureapikeys'}
-payload = {'message': 'message here','msisdn':'2547xxxxxxxx','sender_id':'UjumbeTech'}
+payload = {'message': 'message here','msisdn':'2547xxxxxxxx','sender_id':'SMS Savvy'}
 
-response = requests.post('https://vas.ujumbetech.co.ke/api/message/send/sms',data=payload,headers=newHeaders)
+response = requests.post('https://vas.sms-savvy.co.ke/api/message/send/sms',data=payload,headers=newHeaders)
 
 print("Status code: ", response.status_code)
 
@@ -103,13 +103,13 @@ print(response_Json['message'])
 ```
 
 ```shell
-curl --location --request POST 'https://vas.ujumbetech.co.ke/api/message/send/sms' \
+curl --location --request POST 'https://vas.sms-savvy.co.ke/api/message/send/sms' \
 --header 'Content-Type: application/json' \
 --header 'Authorization: secureapikeys' \
 --data-raw '{
     "message": "You message",
     "msisdn": "2547xxxxxxxx",
-    "sender_id": "UjumbeTech"
+    "sender_id": "SMS Savvy"
 }'
 ```
 
@@ -117,7 +117,7 @@ curl --location --request POST 'https://vas.ujumbetech.co.ke/api/message/send/sm
 
             // Creating a XHR object 
             let xhr = new XMLHttpRequest(); 
-            let url = "https://vas.ujumbetech.co.ke/api/message/send/sms"; 
+            let url = "https://vas.sms-savvy.co.ke/api/message/send/sms"; 
 
             // open a connection 
             xhr.open("POST", url, true); 
@@ -139,7 +139,7 @@ curl --location --request POST 'https://vas.ujumbetech.co.ke/api/message/send/sm
             var message = {
                 "message": "message here",
                 "msisdn": "2547xxxxxxxx",
-                "sender_id": "UjumbeTech"
+                "sender_id": "SMS Savvy"
             }
   
             // Converting JSON data to string 
@@ -162,14 +162,14 @@ import (
 
 func main() {
 
-  url := "http://vas.ujumbetech.co.ke/api/message/send/sms"
+  url := "http://vas.sms-savvy.co.ke/api/message/send/sms"
   method := "POST"
 
 // construct your message using interface
  message := map[string] interface{}{
     "message": "You message",
     "msisdn":"2547xxxxxxxx",
-    "sender_id":"UjumbeTech",
+    "sender_id":"SMS Savvy",
  }
 
  // convert to json
@@ -217,7 +217,7 @@ public class PostJSONWithHttpURLConnection {
 	
 	public static void main (String []args) throws IOException{
 
-		URL url = new URL ("https://vas.ujumbetech.co.ke/api/message/send/sms");
+		URL url = new URL ("https://vas.sms-savvy.co.ke/api/message/send/sms");
 		
 		HttpURLConnection con = (HttpURLConnection)url.openConnection();
 		con.setRequestMethod("POST");
@@ -232,7 +232,7 @@ public class PostJSONWithHttpURLConnection {
 		Map<String, String> map = new LinkedHashMap<>();
         map.put("message","You message");
  	    map.put("msisdn","2547xxxxxxxx");
- 	    map.put("sender_id","UjumbeTech");
+ 	    map.put("sender_id","SMS Savvy");
         Gson gson = new Gson();
         String jsonInputString = gson.toJson(map);
 		
@@ -264,12 +264,12 @@ public class PostJSONWithHttpURLConnection {
     $message = [
         "message" => 'You message',
         "msisdn" => "2547xxxxxxxx",
-        "sender_id" => "UjumbeTech"        
+        "sender_id" => "SMS Savvy"        
     ];
     
     $data_string = json_encode($message);
 
-    $httpRequest = curl_init("https://vas.ujumbetech.co.ke/api/message/send/sms");
+    $httpRequest = curl_init("https://vas.sms-savvy.co.ke/api/message/send/sms");
     curl_setopt($httpRequest,CURLOPT_POST,true);
     curl_setopt($httpRequest,CURLOPT_POSTFIELDS,$data_string);
     curl_setopt($httpRequest,CURLOPT_TIMEOUT,60);
@@ -312,7 +312,7 @@ This endpoint retrieves all kittens.
 
 ### HTTP Request
 
-`POST https://vas.ujumbetech.co.ke/api/message/send/sms`
+`POST https://vas.sms-savvy.co.ke/api/message/send/sms`
 
 ### Query Input Parameters
 The API expects a JSON payload with the following
@@ -322,11 +322,7 @@ Key | Required| Default | Description
 message | yes | none | message ro send
 msisdn | yes | true | Recipient phone number. Separate multiple numbers with comma ( , )
 country_code | no | ke | if this is not a kenya number, supply the country code
-sender_id | no | UjumbeTech | your registered sender ID
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
+sender_id | no | SMSSavvy | your registered sender ID
 
 ## Send Bulk SMS
 
@@ -413,7 +409,7 @@ The above will be your sms contents, the system will go through the file row by 
 
 ### HTTP Request
 
-`POST https://vas.ujumbetech.co.ke/api/message/send/bulk`
+`POST https://vas.sms-savvy.co.ke/api/message/send/bulk`
 
 ### URL Parameters
 
@@ -423,57 +419,6 @@ Key | Required| Default | Description
 --------- | -------- | ------- | -----------
 message | yes | none | message ro send
 country_code | no | ke | if this are not a kenya phone numbers, supply the country code
-sender_id | no | UjumbeTech | your registered sender ID
+sender_id | no | SMS Savvy | your registered sender ID
 file | yes | File to be uploaded
-campaign_name | yes | Name of Campign, contact group
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
+campaign_name | yes | Name of Campaign, contact group
