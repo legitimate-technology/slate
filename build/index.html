@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Bulk SMS API Reference</title>
+    <title>SMS Savvy API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -209,7 +209,7 @@
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo-1e815a84.png" class="logo" alt="Logo" />
+      <img src="images/logo-803f8ba3.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
               <a href="#" data-language-name="ruby">ruby</a>
@@ -247,9 +247,6 @@
                   <li>
                     <a href="#send-bulk-sms" class="toc-h2 toc-link" data-title="Send Bulk SMS">Send Bulk SMS</a>
                   </li>
-                  <li>
-                    <a href="#delete-a-specific-kitten" class="toc-h2 toc-link" data-title="Delete a Specific Kitten">Delete a Specific Kitten</a>
-                  </li>
               </ul>
           </li>
           <li>
@@ -258,15 +255,15 @@
       </ul>
         <ul class="toc-footer">
             <li><a href='#'>Sign Up for a Developer Key</a></li>
-            <li><a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://sms-savvy.co.ke'>Documentation SMS Savvy</a></li>
         </ul>
     </div>
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='generate-token'>Generate Token</h1>
-<p>Before you begin API integrations you will have to generate authorization token. Below steps are outlined on how to generate authorization token.  Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-You need to create an account at <a href="https://ujumbetech.co.ke">ujumbeTech</a>. Once you have the account, login to your account </p>
+<p>Before you begin API integrations you will have to generate authorization token. Below steps are outlined on how to generate authorization token.
+You need to create an account at <a href="https://sms-savvy.co.ke">SMS Savvy</a>. Once you have the account, login to your account </p>
 <h3 id='step-1'>Step 1</h3>
 <p>Once logged in go to the bottom left red sidebar, look for cog wheel icon (show in the below image) and click it</p>
 
@@ -276,8 +273,8 @@ You need to create an account at <a href="https://ujumbetech.co.ke">ujumbeTech</
 
 <p><img src="images/generate-token-step-2-a38f6893.png" alt="Generate token step 2" /></p>
 <h1 id='authentication-headers'>Authentication headers</h1>
-<p>UjumbeTech SMS Portal uses API key to allow access to the API. You can register a new API key by logging in to your account and follow the above steps.
-UjumbeTech SMS Portal expects API key to be included in all API requests to the server in a header that looks like the following:</p>
+<p>SMS Savvy SMS Portal uses API key to allow access to the API. You can register a new API key by logging in to your account and follow the above steps.
+SMS Savvy SMS Portal expects API key to be included in all API requests to the server in a header that looks like the following:</p>
 
 <p><code>Authorization: secureapikeys</code></p>
 
@@ -291,19 +288,19 @@ You must replace <code>secureapikeys</code> with your personal API key.
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"message here"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"msisdn"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2547xxxxxxxx"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"sender_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UjumbeTech"</span><span class="w">
+    </span><span class="s2">"sender_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SMS Savvy"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'net/http'</span>
 <span class="nb">require</span> <span class="s1">'uri'</span>
 <span class="nb">require</span> <span class="s1">'json'</span>
 
-<span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="s2">"https://vas.ujumbetech.co.ke/api/message/send/sms"</span><span class="p">)</span>
+<span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="s2">"https://vas.sms-savvy.co.ke/api/message/send/sms"</span><span class="p">)</span>
 
 <span class="n">header</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'Content-Type'</span><span class="p">:</span> <span class="s1">'text/json'</span><span class="p">,</span><span class="s1">'Authorization'</span><span class="ss">:'secureapikeys'</span><span class="p">}</span>
 <span class="n">user</span> <span class="o">=</span> <span class="p">{</span>
             <span class="ss">message: </span><span class="s1">'message here'</span><span class="p">,</span>
             <span class="ss">msisdn: </span><span class="s1">'2547xxxxxxxx'</span><span class="p">,</span>
-            <span class="ss">sender_id: </span><span class="s1">'UjumbeTech'</span>
+            <span class="ss">sender_id: </span><span class="s1">'SMS Savvy'</span>
        <span class="p">}</span>
 
 <span class="c1"># Create the HTTP objects</span>
@@ -317,9 +314,9 @@ You must replace <code>secureapikeys</code> with your personal API key.
 <span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">newHeaders</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Content-type'</span><span class="p">:</span> <span class="s">'application/json'</span><span class="p">,</span> <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'secureapikeys'</span><span class="p">}</span>
-<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">'message'</span><span class="p">:</span> <span class="s">'message here'</span><span class="p">,</span><span class="s">'msisdn'</span><span class="p">:</span><span class="s">'2547xxxxxxxx'</span><span class="p">,</span><span class="s">'sender_id'</span><span class="p">:</span><span class="s">'UjumbeTech'</span><span class="p">}</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s">'message'</span><span class="p">:</span> <span class="s">'message here'</span><span class="p">,</span><span class="s">'msisdn'</span><span class="p">:</span><span class="s">'2547xxxxxxxx'</span><span class="p">,</span><span class="s">'sender_id'</span><span class="p">:</span><span class="s">'SMS Savvy'</span><span class="p">}</span>
 
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://vas.ujumbetech.co.ke/api/message/send/sms'</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">newHeaders</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://vas.sms-savvy.co.ke/api/message/send/sms'</span><span class="p">,</span><span class="n">data</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span><span class="n">headers</span><span class="o">=</span><span class="n">newHeaders</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="s">"Status code: "</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
 
@@ -328,18 +325,18 @@ You must replace <code>secureapikeys</code> with your personal API key.
 <span class="k">print</span><span class="p">(</span><span class="n">response_Json</span><span class="p">[</span><span class="s">'status'</span><span class="p">])</span>
 <span class="k">print</span><span class="p">(</span><span class="n">response_Json</span><span class="p">[</span><span class="s">'message'</span><span class="p">])</span>
 
-</code></pre><pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s1">'https://vas.ujumbetech.co.ke/api/message/send/sms'</span> <span class="se">\</span>
+</code></pre><pre class="highlight shell tab-shell"><code>curl --location --request POST <span class="s1">'https://vas.sms-savvy.co.ke/api/message/send/sms'</span> <span class="se">\</span>
 --header <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
 --header <span class="s1">'Authorization: secureapikeys'</span> <span class="se">\</span>
 --data-raw <span class="s1">'{
     "message": "You message",
     "msisdn": "2547xxxxxxxx",
-    "sender_id": "UjumbeTech"
+    "sender_id": "SMS Savvy"
 }'</span>
 </code></pre><pre class="highlight javascript tab-javascript"><code>
             <span class="c1">// Creating a XHR object </span>
             <span class="kd">let</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">();</span> 
-            <span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">"https://vas.ujumbetech.co.ke/api/message/send/sms"</span><span class="p">;</span> 
+            <span class="kd">let</span> <span class="nx">url</span> <span class="o">=</span> <span class="s2">"https://vas.sms-savvy.co.ke/api/message/send/sms"</span><span class="p">;</span> 
 
             <span class="c1">// open a connection </span>
             <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"POST"</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span> 
@@ -361,7 +358,7 @@ You must replace <code>secureapikeys</code> with your personal API key.
             <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="p">{</span>
                 <span class="s2">"message"</span><span class="p">:</span> <span class="s2">"message here"</span><span class="p">,</span>
                 <span class="s2">"msisdn"</span><span class="p">:</span> <span class="s2">"2547xxxxxxxx"</span><span class="p">,</span>
-                <span class="s2">"sender_id"</span><span class="p">:</span> <span class="s2">"UjumbeTech"</span>
+                <span class="s2">"sender_id"</span><span class="p">:</span> <span class="s2">"SMS Savvy"</span>
             <span class="p">}</span>
 
             <span class="c1">// Converting JSON data to string </span>
@@ -381,14 +378,14 @@ You must replace <code>secureapikeys</code> with your personal API key.
 
 </span><span class="k">func</span><span class="x"> </span><span class="n">main</span><span class="p">()</span><span class="x"> </span><span class="p">{</span><span class="x">
 
-  </span><span class="n">url</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="s">"http://vas.ujumbetech.co.ke/api/message/send/sms"</span><span class="x">
+  </span><span class="n">url</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="s">"http://vas.sms-savvy.co.ke/api/message/send/sms"</span><span class="x">
   </span><span class="n">method</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="s">"POST"</span><span class="x">
 
 </span><span class="c">// construct your message using interface</span><span class="x">
  </span><span class="n">message</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="k">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="x"> </span><span class="k">interface</span><span class="p">{}{</span><span class="x">
     </span><span class="s">"message"</span><span class="o">:</span><span class="x"> </span><span class="s">"You message"</span><span class="p">,</span><span class="x">
     </span><span class="s">"msisdn"</span><span class="o">:</span><span class="s">"2547xxxxxxxx"</span><span class="p">,</span><span class="x">
-    </span><span class="s">"sender_id"</span><span class="o">:</span><span class="s">"UjumbeTech"</span><span class="p">,</span><span class="x">
+    </span><span class="s">"sender_id"</span><span class="o">:</span><span class="s">"SMS Savvy"</span><span class="p">,</span><span class="x">
  </span><span class="p">}</span><span class="x">
 
  </span><span class="c">// convert to json</span><span class="x">
@@ -433,7 +430,7 @@ You must replace <code>secureapikeys</code> with your personal API key.
 
     <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="o">(</span><span class="n">String</span> <span class="o">[]</span><span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span><span class="o">{</span>
 
-        <span class="n">URL</span> <span class="n">url</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span> <span class="o">(</span><span class="s">"https://vas.ujumbetech.co.ke/api/message/send/sms"</span><span class="o">);</span>
+        <span class="n">URL</span> <span class="n">url</span> <span class="o">=</span> <span class="k">new</span> <span class="n">URL</span> <span class="o">(</span><span class="s">"https://vas.sms-savvy.co.ke/api/message/send/sms"</span><span class="o">);</span>
 
         <span class="n">HttpURLConnection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="n">HttpURLConnection</span><span class="o">)</span><span class="n">url</span><span class="o">.</span><span class="na">openConnection</span><span class="o">();</span>
         <span class="n">con</span><span class="o">.</span><span class="na">setRequestMethod</span><span class="o">(</span><span class="s">"POST"</span><span class="o">);</span>
@@ -448,7 +445,7 @@ You must replace <code>secureapikeys</code> with your personal API key.
         <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedHashMap</span><span class="o">&lt;&gt;();</span>
         <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"message"</span><span class="o">,</span><span class="s">"You message"</span><span class="o">);</span>
         <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"msisdn"</span><span class="o">,</span><span class="s">"2547xxxxxxxx"</span><span class="o">);</span>
-        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"sender_id"</span><span class="o">,</span><span class="s">"UjumbeTech"</span><span class="o">);</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"sender_id"</span><span class="o">,</span><span class="s">"SMS Savvy"</span><span class="o">);</span>
         <span class="n">Gson</span> <span class="n">gson</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Gson</span><span class="o">();</span>
         <span class="n">String</span> <span class="n">jsonInputString</span> <span class="o">=</span> <span class="n">gson</span><span class="o">.</span><span class="na">toJson</span><span class="o">(</span><span class="n">map</span><span class="o">);</span>
 
@@ -477,12 +474,12 @@ You must replace <code>secureapikeys</code> with your personal API key.
     <span class="nv">$message</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s2">"message"</span> <span class="o">=&gt;</span> <span class="s1">'You message'</span><span class="p">,</span>
         <span class="s2">"msisdn"</span> <span class="o">=&gt;</span> <span class="s2">"2547xxxxxxxx"</span><span class="p">,</span>
-        <span class="s2">"sender_id"</span> <span class="o">=&gt;</span> <span class="s2">"UjumbeTech"</span>        
+        <span class="s2">"sender_id"</span> <span class="o">=&gt;</span> <span class="s2">"SMS Savvy"</span>        
     <span class="p">];</span>
 
     <span class="nv">$data_string</span> <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$message</span><span class="p">);</span>
 
-    <span class="nv">$httpRequest</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://vas.ujumbetech.co.ke/api/message/send/sms"</span><span class="p">);</span>
+    <span class="nv">$httpRequest</span> <span class="o">=</span> <span class="nb">curl_init</span><span class="p">(</span><span class="s2">"https://vas.sms-savvy.co.ke/api/message/send/sms"</span><span class="p">);</span>
     <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$httpRequest</span><span class="p">,</span><span class="nx">CURLOPT_POST</span><span class="p">,</span><span class="kc">true</span><span class="p">);</span>
     <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$httpRequest</span><span class="p">,</span><span class="nx">CURLOPT_POSTFIELDS</span><span class="p">,</span><span class="nv">$data_string</span><span class="p">);</span>
     <span class="nb">curl_setopt</span><span class="p">(</span><span class="nv">$httpRequest</span><span class="p">,</span><span class="nx">CURLOPT_TIMEOUT</span><span class="p">,</span><span class="mi">60</span><span class="p">);</span>
@@ -521,7 +518,7 @@ You must replace <code>secureapikeys</code> with your personal API key.
 </span></code></pre>
 <p>This endpoint retrieves all kittens.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>POST https://vas.ujumbetech.co.ke/api/message/send/sms</code></p>
+<p><code>POST https://vas.sms-savvy.co.ke/api/message/send/sms</code></p>
 <h3 id='query-input-parameters'>Query Input Parameters</h3>
 <p>The API expects a JSON payload with the following</p>
 
@@ -554,14 +551,10 @@ You must replace <code>secureapikeys</code> with your personal API key.
 <tr>
 <td>sender_id</td>
 <td>no</td>
-<td>UjumbeTech</td>
+<td>SMSSavvy</td>
 <td>your registered sender ID</td>
 </tr>
 </tbody></table>
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
 <h2 id='send-bulk-sms'>Send Bulk SMS</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
 
 <span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
@@ -676,7 +669,7 @@ Compose your sms to include column header name wrapped in square brackets <code>
 
 <p>The above will be your sms contents, the system will go through the file row by row replacing SMS parameters with values in the file in that column. Each recipient will receive a customized SMS</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>POST https://vas.ujumbetech.co.ke/api/message/send/bulk</code></p>
+<p><code>POST https://vas.sms-savvy.co.ke/api/message/send/bulk</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <p>This endpoint accepts form data with the below fields</p>
 
@@ -703,7 +696,7 @@ Compose your sms to include column header name wrapped in square brackets <code>
 <tr>
 <td>sender_id</td>
 <td>no</td>
-<td>UjumbeTech</td>
+<td>SMS Savvy</td>
 <td>your registered sender ID</td>
 </tr>
 <tr>
@@ -715,54 +708,11 @@ Compose your sms to include column header name wrapped in square brackets <code>
 <tr>
 <td>campaign_name</td>
 <td>yes</td>
-<td>Name of Campign, contact group</td>
+<td>Name of Campaign, contact group</td>
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='delete-a-specific-kitten'>Delete a Specific Kitten</h2><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'kittn'</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="no">Kittn</span><span class="o">::</span><span class="no">APIClient</span><span class="p">.</span><span class="nf">authorize!</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="p">.</span><span class="nf">kittens</span><span class="p">.</span><span class="nf">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">kittn</span>
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">kittn</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="s">'meowmeowmeow'</span><span class="p">)</span>
-<span class="n">api</span><span class="o">.</span><span class="n">kittens</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</code></pre><pre class="highlight shell tab-shell"><code>curl <span class="s2">"http://example.com/api/kittens/2"</span>
-  -X DELETE
-  -H <span class="s2">"Authorization: meowmeowmeow"</span>
-</code></pre><pre class="highlight javascript tab-javascript"><code><span class="kr">const</span> <span class="nx">kittn</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'kittn'</span><span class="p">);</span>
-
-<span class="kd">let</span> <span class="nx">api</span> <span class="o">=</span> <span class="nx">kittn</span><span class="p">.</span><span class="nx">authorize</span><span class="p">(</span><span class="s1">'meowmeowmeow'</span><span class="p">);</span>
-<span class="kd">let</span> <span class="nx">max</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">kittens</span><span class="p">.</span><span class="k">delete</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
-</code></pre>
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"deleted"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">":("</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>This endpoint deletes a specific kitten.</p>
-<h3 id='http-request-3'>HTTP Request</h3>
-<p><code>DELETE http://example.com/kittens/&lt;ID&gt;</code></p>
-<h3 id='url-parameters-2'>URL Parameters</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>ID</td>
-<td>The ID of the kitten to delete</td>
-</tr>
-</tbody></table>
 <h1 id='errors'>Errors</h1>
-<aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
-</aside>
-
 <p>The Kittn API uses the following error codes:</p>
 
 <table><thead>
@@ -781,27 +731,35 @@ This error section is stored in a separate file in <code>includes/_errors.md</co
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden -- The kitten requested is hidden for administrators only.</td>
+<td>Forbidden -- The data requested is hidden for administrators only.</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found -- The specified kitten could not be found.</td>
+<td>Not Found -- The specified data could not be found.</td>
 </tr>
 <tr>
 <td>405</td>
-<td>Method Not Allowed -- You tried to access a kitten with an invalid method.</td>
+<td>Method Not Allowed -- You tried to access a data with an invalid method.</td>
 </tr>
 <tr>
 <td>406</td>
 <td>Not Acceptable -- You requested a format that isn&#39;t json.</td>
 </tr>
 <tr>
-<td>410</td>
-<td>Gone -- The kitten requested has been removed from our servers.</td>
+<td>418</td>
+<td>Invalid Parameters supplied.</td>
 </tr>
 <tr>
-<td>418</td>
-<td>I&#39;m a teapot.</td>
+<td>421</td>
+<td>Invalid Parameters supplied.</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Invalid Parameters supplied.</td>
+</tr>
+<tr>
+<td>428</td>
+<td>Invalid API Key or session expired.</td>
 </tr>
 <tr>
 <td>429</td>
